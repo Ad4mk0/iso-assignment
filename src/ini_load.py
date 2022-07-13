@@ -3,7 +3,7 @@ import country_list
 import time
 
 from redishandler import add_set_to_redis
-# SUPPORTS ALL LANGUAGES exept Dogrí, Kanaka, 
+# SUPPORTS ALMOST ALL LANGUAGES
 def ini_load():
     start = time.time()
     for country in pycountry.countries:
@@ -14,10 +14,8 @@ def ini_load():
             names_in_lang = dict(country_list.countries_for_language(language))
             if (to_add := names_in_lang.get(country_alpha2)) != None:
                 iso_acronyms_set.add(to_add)
-        # print(">>>>>>>>>>", country.alpha_3, ">>>>>>>>>>")
-        # print(iso_acronyms_set)
+
         add_set_to_redis(country.alpha_3, iso_acronyms_set)
 
     print("DONE")
     print(">>> Loaded in: ", time.time()-start,"sec <<<")
-

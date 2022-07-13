@@ -24,7 +24,6 @@ def test_matches_default():
     response = client.post("/match_country", json=obj1)
     assert response.status_code == 200
     r = response.json()
-    print(r)
     assert r['iso'] == 'svk'
     assert r['match_count'] == 3
     assert set(r['matches']) == {"Slowakei", "Slovaška", "Szlovákia"}
