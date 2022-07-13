@@ -8,4 +8,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Pytesting
-        run: docker exec -it iso-assignment_api pytest
+        run: docker exec -it fastapi pytest

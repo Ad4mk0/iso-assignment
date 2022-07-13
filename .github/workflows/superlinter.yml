@@ -14,4 +14,5 @@ jobs:
         uses: github/super-linter@v4
         env:
           DEFAULT_BRANCH: main
+          FILTER_REGEX_EXCLUDE: *.html
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
