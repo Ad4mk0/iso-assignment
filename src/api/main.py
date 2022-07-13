@@ -7,7 +7,7 @@ import uvicorn
 
 from ini_load import ini_load
 from core import handler
-from models import BaseParam, RespModel
+from models.models import BaseParam, RespModel
 
 
 
