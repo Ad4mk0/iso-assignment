@@ -16,7 +16,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
     - name: Build the Docker Image
-      run: docker build --tag ${{secrets.DOCKER_USER}}/my_first_repo:$(date) .
+      run: docker build . --tag ${{secrets.DOCKER_USER}}/my_first_repo:$(date)
 
     - name: Docker Push
-      run: docker push ${{ secrets.DOCKER_USER }}/my_first_repo:$(date)
+      run: docker push ${{secrets.DOCKER_USER}}/my_first_repo:$(date)
