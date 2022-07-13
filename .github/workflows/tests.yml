@@ -10,6 +10,5 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
         timeout-minutes: 5
-
       - name: Pytesting
         run: docker exec fastapi pytest
