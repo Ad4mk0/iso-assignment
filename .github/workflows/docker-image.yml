@@ -1,22 +1,22 @@
-name: Docker Image CI
+name: Docker Image "CD"
 
 on: push
 
 jobs:
-  build:
+  build-container:
+    name: Build container
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
     - name: Docker login
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-
-    - name: Build the Docker Image
-      run: docker build . --tag ${{secrets.DOCKER_USER}}/my_first_repo:$(date)
-
-    - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/my_first_repo:$(date)
+      uses: docker/login-action@v1
+      with:
+        username: ${{secrets.DOCKER_USER}}
+        password: ${{secrets.DOCKER_PASSWORD}}
+    - name: Build and Push to Docker Hub
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: ${{secrets.DOCKER_USER}}/my_first_repo:latest, ${{secrets.DOCKER_USER}}/my_first_repo:${{github.run_number}}
