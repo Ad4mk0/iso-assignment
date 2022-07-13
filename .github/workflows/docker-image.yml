@@ -19,7 +19,7 @@ jobs:
       run: docker build . --file Dockerfile
 
     - name: Tag docker image
-      run: docker tag <imageId or tag> ${{ secrets.DOCKER_USER }}/fastapi:$(date +%s)
+      run: docker tag fastapi ${{ secrets.DOCKER_USER }}/my_first_repo:$(date +%s)
 
     - name: Docker Push
       run: docker push ${{ secrets.DOCKER_USER }}/my_first_repo
