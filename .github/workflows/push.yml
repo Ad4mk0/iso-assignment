@@ -1,4 +1,4 @@
-name: docker-compose-actions-workflow
+name: docker-compose+pytesting
 on: push
 jobs:
   test:
@@ -7,5 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up -d
+        timeout-minutes: 5
+
       - name: Pytesting
-        run: docker exec -T fastapi pytest
+        run: docker exec fastapi pytest
