@@ -86,11 +86,11 @@ If you would like to add tests of your own, modify **test_api.py** file
 
 ## FE
 
-This project also contains FE app, *pyscript.html*, so you can engage with the API interactively in your browser.
+This project also contains FE app, *pyscript.html,* so you can engage with the API interactively in your browser.
 
 ![example.png](https://i.postimg.cc/zvGwxLQZ/example.png)
 ## Badges
-Docker hub repo can be found at the following link:
+Docker hub repository can be found at the following link:
 https://hub.docker.com/repository/docker/mikinaa/my_first_repo/general
 
 ![Linter](https://github.com/Ad4mk0/iso-assignment/actions/workflows/superlinter.yml/badge.svg)
