@@ -7,14 +7,13 @@ The task was to create microservice, that is able to take an country ISO code an
 Serve the application as the API.
 
 
-
 ## Disclaimer
 The countries has to be in right format for given language, on the other hand, iso is not a case sensitive parameter. Supports both, 3166-1 alpha-2 and ISO 3166-1 alpha-3. Also, it does not preserve the order of "out filtered" countries, can be changed in code by uncommenting one single line.
 ## API Reference
 
 #### Make request example
 
-```http
+```
   POST /match_country
 ```
 
@@ -23,15 +22,15 @@ The countries has to be in right format for given language, on the other hand, i
 	"iso": "fra",
 	"countries": [
 		"Slovakia",
-        "Slovensko", 
-        "Czechia", 
-        "Česko", 
-        "Botswana", 
-        "Taiwan", 
-        "Francúzsko", 
-        "Frankreich",
-        "France", 
-        "Francie"
+    "Slovensko", 
+    "Czechia", 
+    "Česko", 
+    "Botswana", 
+    "Taiwan", 
+    "Francúzsko", 
+    "Frankreich",
+    "France", 
+    "Francie"
 	]
 }
 ```
@@ -44,9 +43,9 @@ The countries has to be in right format for given language, on the other hand, i
 	"match_count": 4,
 	"matches": [
 		"Frankreich",
-        "Francúzsko",
-        "France",
-        "Francie"
+    "Francúzsko",
+    "France",
+    "Francie"
 	]
 }
 ```
@@ -87,7 +86,7 @@ If you would like to add tests of your own, modify **test_api.py** file
 
 ## FE
 
-This project also contains FE app, *pyscript.html*, so you can engage with the API interactivelly in your browser.
+This project also contains FE app, *pyscript.html*, so you can engage with the API interactively in your browser.
 
 ![example.png](https://i.postimg.cc/zvGwxLQZ/example.png)
 ## Badges
