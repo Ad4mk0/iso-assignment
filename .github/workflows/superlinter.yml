@@ -17,6 +17,5 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
-          FILTER_REGEX_EXCLUDE: .*src/.*.html
-          FILTER_REGEX_EXCLUDE: .*.md
+          FILTER_REGEX_EXCLUDE: .*src/.*.html|.*.md
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
