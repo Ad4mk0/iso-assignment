@@ -17,36 +17,36 @@ The countries has to be in right format for given language, on the other hand, i
   POST /match_country
 ```
 
-```json
+```
 {
-	"iso": "fra",
-	"countries": [
-		"Slovakia",
-    "Slovensko", 
-    "Czechia", 
-    "Česko", 
-    "Botswana", 
-    "Taiwan", 
-    "Francúzsko", 
-    "Frankreich",
-    "France", 
-    "Francie"
-	]
+        "iso": "fra",
+        "countries": [
+                "Slovakia",
+                "Slovensko", 
+                "Czechia", 
+                "Česko", 
+                "Botswana", 
+                "Taiwan", 
+                "Francúzsko", 
+                "Frankreich",
+                "France", 
+                "Francie"
+        ]
 }
 ```
 
 #### Will return :
 
-```json
+```
 {
-	"iso": "fra",
-	"match_count": 4,
-	"matches": [
-		"Frankreich",
-    "Francúzsko",
-    "France",
-    "Francie"
-	]
+        "iso": "fra",
+        "match_count": 4,
+        "matches": [
+                "Frankreich",
+                "Francúzsko",
+                "France",
+                "Francie"
+        ]
 }
 ```
 
@@ -90,6 +90,8 @@ This project also contains FE app, *pyscript.html*, so you can engage with the A
 
 ![example.png](https://i.postimg.cc/zvGwxLQZ/example.png)
 ## Badges
+Docker hub repo can be found at the following link:
+https://hub.docker.com/repository/docker/mikinaa/my_first_repo/general
 
 ![Linter](https://github.com/Ad4mk0/iso-assignment/actions/workflows/superlinter.yml/badge.svg)
 ![Tests](https://github.com/Ad4mk0/iso-assignment/actions/workflows/tests.yml/badge.svg)

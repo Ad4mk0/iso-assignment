@@ -1,13 +1,11 @@
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.encoders import jsonable_encoder
-from fastapi.exceptions import RequestValidationError, HTTPException
+from fastapi.exceptions import HTTPException
 import uvicorn
 
 from ini_load import ini_load
 from core import handler
-from redishandler import is_occupied_redis
 from models.models import BaseParam, RespModel
 
 
@@ -25,13 +23,6 @@ app.add_middleware(
 
 
 ini_load()
-
-@app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
-    return JSONResponse(
-        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-        content=jsonable_encoder({"detail": exc.errors(), "body": exc.body}),
-    )
 
 
 
