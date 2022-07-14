@@ -1,58 +1,99 @@
-# iso-assignment
+
+# ISO-assignment
 
 ## Task
-
-Create a microservice, that is able to tak as an input an country ISO code and a list of country names (in different languages) and will filter out just the countries that correspond to the provided ISO code.
+The task was to create microservice, that is able to take an country ISO code and a list of country names (in different languages) as an input. It will filter out just the countries that correspond to the provided ISO code.
 
 Serve the application as the API.
 
-### Example
 
-Request:
 
+## Disclaimer
+The countries has to be in right format for given language, on the other hand, iso is not a case sensitive parameter. Supports both, 3166-1 alpha-2 and ISO 3166-1 alpha-3. Also, it does not preserve the order of "out filtered" countries, can be changed in code by uncommenting one single line.
+## API Reference
+
+#### Make request example
+
+```http
+  POST /match_country
 ```
-POST /match_country
 
+```json
 {
-	"iso": "svk",
+	"iso": "fra",
 	"countries": [
-		"iran",
-		"Slowakei",
-		"Vatikan",
-		"Slovaška",
-		"Szlovakia",
-		"Belgrade",
-		"España",
-		"Nizozemsko"
+		"Slovakia",
+        "Slovensko", 
+        "Czechia", 
+        "Česko", 
+        "Botswana", 
+        "Taiwan", 
+        "Francúzsko", 
+        "Frankreich",
+        "France", 
+        "Francie"
 	]
 }
 ```
 
-Response:
-```
+#### Will return :
+
+```json
 {
-	"iso": "svk",
-	"match_count": 3,
+	"iso": "fra",
+	"match_count": 4,
 	"matches": [
-		"Slowakei",
-		"Slovaška",
-		"Szlovakia"
+		"Frankreich",
+        "Francúzsko",
+        "France",
+        "Francie"
 	]
 }
 ```
 
-## Requirements
 
-- Showcase all your best skills. The assignment is small (just mvp), but try to include any improvement that you can, e.g.:
-  - test coverage
-  - api documentation in Open API 3.0
-  - data storing and caching
-  - docker
-  - CI/CD
-  - FE interface
-  - anything else you'd like (these are just some exmamples that you can include)
-- Structure the application properly
-- Make it easy for extention of functionality
-- Sumbit as a link to your github repository with the solution
-- Include README.md with the description and how to run the application
-- Include the example output from stdout (& tests if applied)
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Ad4mk0/iso-assignment.git
+```
+
+Go to the project directory
+
+```bash
+  cd iso-assignment
+```
+
+Use docker
+
+```bash
+  docker compose up
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  docker exec -it fastapi pytest
+```
+
+If you would like to add tests of your own, modify **test_api.py** file
+
+
+## FE
+
+This project also contains FE app, *pyscript.html*, so you can engage with the API interactivelly in your browser.
+
+![example.png](https://i.postimg.cc/zvGwxLQZ/example.png)
+## Badges
+
+![Linter](https://github.com/Ad4mk0/iso-assignment/actions/workflows/superlinter.yml/badge.svg)
+![Tests](https://github.com/Ad4mk0/iso-assignment/actions/workflows/tests.yml/badge.svg)
+![DockerHub](https://github.com/Ad4mk0/iso-assignment/actions/workflows/docker-image.yml/badge.svg)
+
+

@@ -7,8 +7,8 @@ import uvicorn
 
 from ini_load import ini_load
 from core import handler
+from redishandler import is_occupied_redis
 from models.models import BaseParam, RespModel
-
 
 
 app = FastAPI()
@@ -22,7 +22,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-print("Loading...")
+
+
 ini_load()
 
 @app.exception_handler(RequestValidationError)
@@ -31,6 +32,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
         content=jsonable_encoder({"detail": exc.errors(), "body": exc.body}),
     )
+
 
 
 @app.get('/ping')
