@@ -14,7 +14,7 @@ The countries has to be in right format for given language, on the other hand, i
 #### Make request example
 
 ```
-  POST /match_country
+  POST http://127.0.0.1:8000/match_country
 ```
 
 ```
@@ -50,7 +50,7 @@ The countries has to be in right format for given language, on the other hand, i
 }
 ```
 
-
+Swagger can be accessed at: http://127.0.0.1:8000/redoc
 
 ## Run Locally
 
