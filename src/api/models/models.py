@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List
 
 
-class BaseParam(BaseModel):
+class RequestModel(BaseModel):
     iso: str
     countries: List[str]
 

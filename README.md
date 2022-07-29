@@ -51,6 +51,7 @@ The countries has to be in right format for given language, on the other hand, i
 ```
 
 Swagger can be accessed at: http://127.0.0.1:8000/redoc
+or: https://github.com/Ad4mk0/iso-assignment/blob/d9aa967c13b1c73310752ddf4c5f509a72e10646/openapi.json
 
 ## Run Locally
 

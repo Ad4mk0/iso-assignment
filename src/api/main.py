@@ -6,7 +6,7 @@ import uvicorn
 
 from ini_load import ini_load
 from core import handler
-from models.models import BaseParam, RespModel
+from models.models import RequestModel, RespModel
 
 
 app = FastAPI()
@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 
-ini_load()
+# ini_load()
 
 
 
@@ -33,7 +33,7 @@ def ping():
 
 
 @app.post('/match_country', response_model=RespModel)
-async def matches(baseParam:BaseParam):
+async def matches(baseParam:RequestModel):
     u =  handler(baseParam.iso, baseParam.countries)
     if u:
         return JSONResponse(u)

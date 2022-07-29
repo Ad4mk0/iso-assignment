@@ -21,7 +21,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/BaseParam" }
+              "schema": { "$ref": "#/components/schemas/RequestModel" }
             }
           },
           "required": true
@@ -49,8 +49,8 @@
   },
   "components": {
     "schemas": {
-      "BaseParam": {
-        "title": "BaseParam",
+      "RequestModel": {
+        "title": "RequestModel",
         "required": ["iso", "countries"],
         "type": "object",
         "properties": {
