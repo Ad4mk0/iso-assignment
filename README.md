@@ -72,7 +72,7 @@ Go to the project directory
 Use docker
 
 ```bash
-  docker compose up
+  docker-compose up
 ```
 
 
