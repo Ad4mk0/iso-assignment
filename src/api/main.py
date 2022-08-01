@@ -25,6 +25,7 @@ app.add_middleware(
 ini_load()
 
 
+
 @app.get('/ping')
 def ping():
     return 'pong'
