@@ -35,7 +35,7 @@ def ping():
 @app.post('/match_country', response_model=RespModel)
 async def matches(baseParam:RequestModel):
     try:
-        JSONResponse(handler(baseParam.iso, baseParam.countries))
+        return JSONResponse(handler(baseParam.iso, baseParam.countries))
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
 
