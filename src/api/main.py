@@ -22,8 +22,7 @@ app.add_middleware(
 )
 
 
-# ini_load()
-
+ini_load()
 
 
 @app.get('/ping')
@@ -34,10 +33,10 @@ def ping():
 
 @app.post('/match_country', response_model=RespModel)
 async def matches(baseParam:RequestModel):
-    u =  handler(baseParam.iso, baseParam.countries)
-    if u:
-        return JSONResponse(u)
-    raise HTTPException(status_code=404, detail="Item not found")
+    try:
+        JSONResponse(handler(baseParam.iso, baseParam.countries))
+    except Exception as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
 
 if __name__ == '__main__':

@@ -9,6 +9,7 @@ Serve the application as the API.
 
 ## Disclaimer
 The countries has to be in right format for given language, on the other hand, iso is not a case sensitive parameter. Supports both, 3166-1 alpha-2 and ISO 3166-1 alpha-3. Also, it does not preserve the order of "out filtered" countries, can be changed in code by uncommenting one single line.
+This code was developed on Windows 10 running Python 3.10.2
 ## API Reference
 
 #### Make request example
@@ -51,7 +52,7 @@ The countries has to be in right format for given language, on the other hand, i
 ```
 
 Swagger can be accessed at: http://127.0.0.1:8000/redoc
-or: https://github.com/Ad4mk0/iso-assignment/blob/d9aa967c13b1c73310752ddf4c5f509a72e10646/openapi.json
+or: [openapi.json link](https://github.com/Ad4mk0/iso-assignment/blob/d9aa967c13b1c73310752ddf4c5f509a72e10646/openapi.json)
 
 ## Run Locally
 
@@ -91,8 +92,7 @@ This project also contains FE app, *pyscript.html,* so you can engage with the A
 
 ![example.png](https://i.postimg.cc/zvGwxLQZ/example.png)
 ## Badges
-Docker hub repository can be found at the following link:
-https://hub.docker.com/repository/docker/mikinaa/my_first_repo/general
+Docker hub repository can be found [here](https://hub.docker.com/repository/docker/mikinaa/my_first_repo/general).
 
 ![Linter](https://github.com/Ad4mk0/iso-assignment/actions/workflows/superlinter.yml/badge.svg)
 ![Tests](https://github.com/Ad4mk0/iso-assignment/actions/workflows/tests.yml/badge.svg)

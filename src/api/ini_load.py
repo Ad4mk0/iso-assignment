@@ -1,12 +1,10 @@
 import pycountry
 import country_list
-import time
 
 from redishandler import add_set_to_redis
 # SUPPORTS ALMOST ALL LANGUAGES
 def ini_load():
     """loads up all country acronyms on app startup to redis"""
-    start = time.time()
     for country in pycountry.countries:
         iso_2 = country.alpha_2
         iso_acronyms_set = set()
@@ -17,8 +15,5 @@ def ini_load():
                 iso_acronyms_set.add(to_add)
 
         add_set_to_redis(country.alpha_3, iso_acronyms_set)
-
-    print("DONE")
-    print(">>> Loaded in: {} sec <<<".format(time.time()-start))
 
 #TODO: use logger
