@@ -53,7 +53,7 @@ This code was developed on Windows 10 running Python 3.10.2
 ```
 
 Swagger can be accessed at: http://127.0.0.1:8000/redoc
-or: [openapi.json link](https://github.com/Ad4mk0/iso-assignment/blob/d9aa967c13b1c73310752ddf4c5f509a72e10646/openapi.json)
+or [here](https://github.com/Ad4mk0/iso-assignment/blob/d9aa967c13b1c73310752ddf4c5f509a72e10646/openapi.json).
 
 ## Run Locally
 
