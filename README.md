@@ -9,6 +9,7 @@ Serve the application as the API.
 
 ## Disclaimer
 The countries has to be in right format for given language, on the other hand, iso is not a case sensitive parameter. Supports both, 3166-1 alpha-2 and ISO 3166-1 alpha-3. Also, it does not preserve the order of "out filtered" countries, can be changed in code by uncommenting one single line.
+
 This code was developed on Windows 10 running Python 3.10.2
 ## API Reference
 
